@@ -1,0 +1,20 @@
+{
+  "name": "table",
+  "version": "1.0.0",
+  "author": "murashovviktorv",
+  "license": "MIT",
+  "scripts": {
+    "build:client": "cd client && npm i && webpack --config webpack.config.js",
+    "build:server": "cd server && npm i && webpack --config webpack.config.js",
+    "server": "cd server && nodemon dist/server.js",
+    "client": "cd client && webpack-dev-server .",
+    "build": "npm run build:server && npm run build:client"
+  },
+  "devDependencies": {
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-node-externals": "3.0.0"
+  },
+  "private": true
+}

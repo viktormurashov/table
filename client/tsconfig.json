@@ -1,0 +1,44 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
+    "jsx": "react",
+    "module": "ES6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@styles": [
+        "./src/styles"
+      ],
+      "@hooks": [
+        "./src/hooks"
+      ],
+      "@interfaces": [
+        "./src/interfaces"
+      ],
+      "@services": [
+        "./src/services"
+      ],
+      "@utils": [
+        "./src/utils"
+      ],
+    },
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "skipLibCheck": true
+  }
+}
