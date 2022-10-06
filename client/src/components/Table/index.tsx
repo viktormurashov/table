@@ -43,7 +43,7 @@ export const Table: FC<TableProps> = ({
   }, [sort, page, filter]);
 
   const applyFilters = (newFilter: Filter) => {
-    callIfNotLoading(isLoading, () => setFilter(newFilter));
+    callIfNotLoading(isLoading, () => { setFilter(newFilter), setPage(1) });
   };
 
   const onSorting = (newSort: Sort) => {

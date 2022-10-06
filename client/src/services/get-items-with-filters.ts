@@ -16,6 +16,10 @@ export const getItemsWithFilters = async (
     const res = await fetch(`http://localhost:8080/table?${query}`);
     const data = await res.json();
 
+    if (!data) {
+      throw new Error('Data is empty');
+    }
+
     return data;
   } catch (error) {
     // TODO: add logger

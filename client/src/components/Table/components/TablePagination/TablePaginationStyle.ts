@@ -6,6 +6,7 @@ export const TablePaginationContainer = styled.div`
   height: 52px;
   display: flex;
   justify-content: flex-end;
+  background-color: coral;
 `;
 
 export const PaginationButtonsContainer = styled.div`
