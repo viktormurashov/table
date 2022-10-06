@@ -1,8 +1,20 @@
-import { Column, Item, Row } from "@interfaces";
+import { Column, FieldType, Item, Row } from "@interfaces";
 
 interface Params {
   items: Item[];
   fields: Column[];
+}
+
+const getTextByType = (text: string | number, type: FieldType) => {
+  if (!text) {
+    return '';
+  }
+
+  if (type === 'date') {
+    return new Date(Number(text)).toLocaleDateString();
+  }
+
+  return String(text);
 }
 
 export const getRowsFromData = ({
@@ -15,7 +27,8 @@ export const getRowsFromData = ({
     const row: Row[] = [];
 
     fields.forEach(({ field, type, width }) => {
-      row.push({ fieldName: String(data[field as keyof Item]), type, width, field });
+      const text = getTextByType(data[field as keyof Item], type);
+      row.push({ fieldName: text, type, width, field });
     });
 
     rows.push(row);

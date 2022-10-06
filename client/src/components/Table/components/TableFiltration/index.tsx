@@ -45,7 +45,11 @@ export const TableFiltration: FC<TableFiltrationProps> = ({
       return;
     }
 
-    onApplyFilters({ filterField: field.field, condition, value: filtrationText, type: field?.type });
+    const value = field.type === 'date'
+      ? new Date(filtrationText).getTime().toString()
+      : filtrationText;
+
+    onApplyFilters({ filterField: field.field, condition, value, type: field?.type });
   };
 
   const onReset = () => {
