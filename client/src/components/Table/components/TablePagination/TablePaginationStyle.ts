@@ -19,12 +19,16 @@ export const PaginationButtonsContainer = styled.div`
 `;
 
 export const PaginationButton = styled.button<{ disabled: boolean }>`
-  border-radius: 20px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  border-width: 0.5px;
-  background-color: ${props => props.disabled ? 'lightgrey' : 'darkseagreen'};
+  border: unset;
+  background-color: unset;
   opacity: ${props => props.disabled ? 0.5 : 1};
+
+  :hover {
+    background-color: ${props => props.disabled ? 'unset' : 'rgba(0, 0, 0, 0.1)'};
+    border-radius: 20px;
+  }
 `;
 
 export const PaginationTextContainer = styled.div`

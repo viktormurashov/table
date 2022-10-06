@@ -37,6 +37,7 @@ export const TableRowItemContainer = styled.div<TableRowContainerProps>`
   gap: 10px;
 
   &:hover ${TableHeaderSortButton} {
-    opacity: ${({ sortable }) => sortable === false ? 0 : 1};
+    opacity: 1;
+    display: ${({ sortable }) => sortable === false ? 'none' : 'block'};
   }
 `;
